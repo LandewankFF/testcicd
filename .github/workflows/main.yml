@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Deploy with gh-pages
       run: |
-        git remote set-url origin https://git:${{secrets.TOKEN}}@github.com/LandewankFF/Training-CI-CD.git
+        git remote set-url origin https://git:${{secrets.TOKEN}}@github.com/LandewankFF/testcicd.git
         git status
         npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
       env:
