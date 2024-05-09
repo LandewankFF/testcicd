@@ -25,6 +25,10 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - name: Set up Git
+      run: |
+        git config --global user.email "${{ secrets.EMAIL }}"
+        git config --global user.name "${{ secrets.USERNAME }}"
 
   deploy:
     needs: build
@@ -32,8 +36,9 @@ jobs:
     steps:
     - name: Deploy with gh-pages
       run: |
-        git remote set-url origin https://git:${{secrets.TOKEN}}@github.com/LandewankFF/testcicd.git
-        git status
-        npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        git remote set-url origin https://git:${{ secrets.TOKEN }}@github.com/LandewankFF/testcicd.git
+        git config  --global user.email "${{ secrets.EMAIL }}"  
+        git config  --global user.name "${{ secrets.USERNAME }}" 
+        npm run deploy "github-actions-bot <support+actions@github.com>"
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
