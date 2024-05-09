@@ -3,10 +3,10 @@ import Cat from '../../assets/header-cat.png';
 import AOS from 'aos';
 import { LanguageContext } from '../../utils/LanguageContext';
 // import { Link, useLocation } from 'react-router-dom'; //error di Link deteksi di test
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 const HeaderCatalogue = () => {
-  const location = useLocation();
+  // const location = useLocation();
   // const isCatalogue = location.pathname === '/catalogue'; //error is catalog deteksi tets ci cd
   const { t } = useContext(LanguageContext);
   useEffect(() => {
