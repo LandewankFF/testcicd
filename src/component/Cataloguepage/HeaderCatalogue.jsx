@@ -9,7 +9,7 @@ const HeaderCatalogue = () => {
   // const location = useLocation();
   // const isCatalogue = location.pathname === '/catalogue'; //error is catalog deteksi tets ci cd
   const { t } = useContext(LanguageContext);
-  useEffect(() => {
+  useE(() => {
     AOS.init({
       once: true,
       duration: 1500,
