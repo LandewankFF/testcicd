@@ -34,6 +34,6 @@ jobs:
       run: |
         git remote set-url origin https://git:${{secrets.TOKEN}}@github.com/LandewankFF/Training-CI-CD.git
         git status
-        npm run deploy "github-actions-bot <support+actions@github.com>"
+        npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
